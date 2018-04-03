@@ -147,7 +147,10 @@ function install_platformio()
     pip install --user -U https://github.com/platformio/platformio/archive/develop.zip
     platformio platform install https://github.com/platformio/platform-espressif8266.git#feature/stage
     sed -i 's/https:\/\/github\.com\/esp8266\/Arduino\.git/*/' ~/.platformio/platforms/espressif8266/platform.json
+    cat ~/.platformio/platforms/espressif8266/platform.json
+    pio platform show espressif8266
     ln -s $TRAVIS_BUILD_DIR ~/.platformio/packages/framework-arduinoespressif8266
+    pio platform show espressif8266
     # Install dependencies:
     # - esp8266/examples/ConfigFile
     pio lib install ArduinoJson
